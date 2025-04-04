@@ -94,7 +94,7 @@ public class Personagem {
         }
     }
 
-    public String tooString(){
+    public String toString(){
         return String.format("""
                 Informações detalhadas do Personagem
                 Nome: %s

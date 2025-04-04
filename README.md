@@ -1,7 +1,7 @@
 # Jogo Simples de Criação de Personagem  
 
 Este projeto é um exercício prático desenvolvido para a fixação de aprendizado em programação.  
-A atividade foi feita em sala de aula pelo professor **Túlio Cearamicoli Vivaldini**.  
+A atividade foi sugerida em sala de aula pelo professor **Túlio Cearamicoli Vivaldini**.  
 
 ## Sobre o Jogo  
 O jogo simula um personagem com atributos básicos, onde o jogador pode interagir realizando ações como caçar, comer e dormir. O objetivo é gerenciar os atributos do personagem e alcançar 10 pontos de experiência antes que sua energia se esgote ou seus níveis de fome e sono atinjam o limite(que são 10).  

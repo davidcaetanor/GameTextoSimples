@@ -14,6 +14,46 @@ public class Jogo {
         int energia = Integer.parseInt(JOptionPane.showInputDialog(null,"Informe a Energia do Personagem (Recomendado 10): "));
         int fome = Integer.parseInt(JOptionPane.showInputDialog(null,"Informe a Fome do Personagem (Recomendado 0): "));
         int sono = Integer.parseInt(JOptionPane.showInputDialog(null,"Informe o Sono do Personagem (Recomendado 0): "));
-        
+        int exp;
+        Personagem hunter = new Personagem(nome, energia, fome, sono);
+
+        do{
+            int op;
+            op = Integer.parseInt(JOptionPane.showInputDialog(null,"""
+                    ---------------------------------------------------------
+                        Menu Interativo do Sistema de Sobrevivente!
+                    ----------------------------------------------------------
+                    1 - Caçar ( + 1 XP, - 2 ENERGIA, + 1 FOME & SONO )
+                    2 - Comer ( - 1 FOME, + 1 ENERGIA )
+                    3 - Dormir ( - 1 SONO, + 1 ENERGIA )
+                    4 - MostrarInformações
+                    
+                    Escolha uma opção:
+                    """));
+            
+            switch(op){
+                case 1:
+                    JOptionPane.showMessageDialog(null,"Caçar");
+                    break;
+                case 2:
+                    JOptionPane.showMessageDialog(null,"Comer");
+                    break;
+                case 3:
+                    JOptionPane.showMessageDialog(null,"Dormir");
+                    break;
+
+                case 4:
+                    String vazia = JOptionPane.showInputDialog(null,"Aperte Enter para retonar ao Menu!");
+                    break;
+
+                default:
+                    JOptionPane.showMessageDialog(null,"Erro!. Opção inválida.");
+                    vazia = JOptionPane.showInputDialog(null, """
+                            Após retornar ao menu, selecione um número inteiro de 1 a 4
+                            Para retornar ao menu, aperte Enter!""");
+                    break;
+            }
+
+        }while(energia > 0 && sono <= 9 && fome <= 9);
     }
 }

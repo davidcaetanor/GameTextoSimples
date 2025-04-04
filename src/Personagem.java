@@ -96,12 +96,15 @@ public class Personagem {
 
     public String toString(){
         return String.format("""
-                Informações detalhadas do Personagem
-                Nome: %s
-                Energia: %d
-                Fome: %d
-                Sono: %d
-                Experiencia: %d
+                -------------------------------------------------------------
+                    Informações detalhadas do Personagem
+                -------------------------------------------------------------
+               
+                    Nome: %s
+                    Energia: %d
+                    Fome: %d
+                    Sono: %d
+                    Experiencia: %d
                 """, getNome(), getEnergia(),getFome(),getSono(),getXp());
     }
     

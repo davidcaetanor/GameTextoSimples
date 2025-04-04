@@ -33,19 +33,18 @@ public class Jogo {
             
             switch(op){
                 case 1:
-                    JOptionPane.showMessageDialog(null,"Caçar");
+                    hunter.cacar();
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null,"Comer");
+                    hunter.comer();
                     break;
                 case 3:
-                    JOptionPane.showMessageDialog(null,"Dormir");
+                    hunter.dormir();
                     break;
-
                 case 4:
+                    JOptionPane.showMessageDialog(null,hunter);
                     String vazia = JOptionPane.showInputDialog(null,"Aperte Enter para retonar ao Menu!");
                     break;
-
                 default:
                     JOptionPane.showMessageDialog(null,"Erro!. Opção inválida.");
                     vazia = JOptionPane.showInputDialog(null, """

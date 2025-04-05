@@ -107,5 +107,4 @@ public class Personagem {
                     Experiencia: %d
                 """, getNome(), getEnergia(),getFome(),getSono(),getXp());
     }
-    
 }

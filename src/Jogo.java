@@ -1,20 +1,43 @@
 import javax.swing.*;
+import static java.lang.System.exit;
 
 public class Jogo {
     public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null, "Bem-vindo ao Desafio do Sobrevivente!");
-        JOptionPane.showMessageDialog(null, "Seu objetivo é fazer com que seu personagem alcance 10 pontos de experiência.");
-        JOptionPane.showMessageDialog(null, "Cuidado! O jogo termina se sua energia chegar a 0 ou se os níveis de fome e sono atingirem o limite (10).");
-        JOptionPane.showMessageDialog(null, "Cada vez que você caçar, ganhará 1 ponto de experiência.");
-        JOptionPane.showMessageDialog(null, "Gerencie bem seus recursos e boa sorte!");
+        JOptionPane.showMessageDialog(null, "Bem-vindo ao Desafio do Sobrevivente!\n" +
+                "Seu objetivo é fazer com que seu personagem alcance 10 pontos de experiência.\n" +
+                "Cuidado! O jogo termina se sua energia chegar a 0 ou se os níveis de fome e sono atingirem o limite (10).\n" +
+                "Cada vez que você caçar, ganhará 1 ponto de experiência.\n" +
+                "Gerencie bem seus recursos e boa sorte!");
 
-        String nome = JOptionPane.showInputDialog(null, "Insira o nome do Personagem: ");
+        String nome;
+        do {
+            nome = JOptionPane.showInputDialog(null, "Insira o nome do Personagem: ");
+            if (nome.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Erro: O nome não pode ser vazio. Por favor, insira um nome válido.");
+            }
+        } while (nome.trim().isEmpty());
+
         int energia = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe a Energia do Personagem (Recomendado 10): "));
+        if (energia <= 0) {
+            JOptionPane.showMessageDialog(null, "VOCE PERDEU!\nMOTIVO: MUITO CANSAÇO");
+            exit(403);
+        }
+
         int fome = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe a Fome do Personagem (Recomendado 0): "));
+        if (fome == 10) {
+            JOptionPane.showMessageDialog(null, "VOCE PERDEU!\nMOTIVO: MUITA FOME");
+            exit(403);
+        }
+
         int sono = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe o Sono do Personagem (Recomendado 0): "));
+        if (sono == 10) {
+            JOptionPane.showMessageDialog(null, "VOCE PERDEU!\nMOTIVO: MUITO SONO");
+            exit(403);
+        }
+
+        Personagem hunter = new Personagem(nome, energia, fome, sono);
         int exp;
         String vazia;
-        Personagem hunter = new Personagem(nome, energia, fome, sono);
 
         do {
             int op;
@@ -97,23 +120,16 @@ public class Jogo {
         } while(hunter.getEnergia() > 0 && hunter.getSono() < 10 && hunter.getFome() < 10 && hunter.getXp() < 10);
         
         if (hunter.getXp() == 10) {
-            JOptionPane.showMessageDialog(null, "PARABÉNS, VOCE GANHOU!");
-            JOptionPane.showMessageDialog(null, "ALCANÇOU O NIVEL NECESSÁRIO DE EXPERIENCIA E SUBIU DE NIVEL");
+            JOptionPane.showMessageDialog(null, "PARABÉNS, VOCE GANHOU!\nALCANÇOU O NIVEL NECESSÁRIO DE EXPERIENCIA E SUBIU DE NIVEL");
         } else if (hunter.getSono() == 10) {
-            JOptionPane.showMessageDialog(null, "VOCE PERDEU!");
-            JOptionPane.showMessageDialog(null, "MOTIVO: MUITO SONO");
+            JOptionPane.showMessageDialog(null, "VOCE PERDEU!\nMOTIVO: MUITO SONO");
         } else if (hunter.getFome() == 10) {
-            JOptionPane.showMessageDialog(null, "VOCE PERDEU!");
-            JOptionPane.showMessageDialog(null, "MOTIVO: MUITA FOME");
+            JOptionPane.showMessageDialog(null, "VOCE PERDEU!\nMOTIVO: MUITA FOME");
         } else {
-            JOptionPane.showMessageDialog(null, "VOCE PERDEU!");
-            JOptionPane.showMessageDialog(null, "MOTIVO: MUITO CANSAÇO");
+            JOptionPane.showMessageDialog(null, "VOCE PERDEU!\nMOTIVO: MUITO CANSAÇO");
         }
 
         vazia = JOptionPane.showInputDialog(null, hunter.toString() + "\nAperte enter para encerrar o programa!");
-        JOptionPane.showMessageDialog(null, """
-                FIM DE JOGO!
-                Obrigado por Jogar.
-                """);
+        JOptionPane.showMessageDialog(null, "FIM DE JOGO!\nObrigado por Jogar.");
     }
 }

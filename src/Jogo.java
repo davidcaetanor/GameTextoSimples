@@ -9,7 +9,6 @@ public class Jogo {
                 "Cada vez que você caçar, ganhará 1 ponto de experiência.\n" +
                 "Gerencie bem seus recursos e boa sorte!");
 
-
             String nome;
             do {
                 nome = JOptionPane.showInputDialog(null, "Insira o nome do Personagem: ");

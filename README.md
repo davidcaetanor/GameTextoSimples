@@ -4,7 +4,11 @@ Este projeto é um exercício prático desenvolvido para a fixação de aprendiz
 A atividade foi proposta em sala de aula pelo professor **Túlio Cearamicoli Vivaldini**.  
 
 ## Sobre o Jogo  
-O jogo simula um personagem com atributos básicos, onde o jogador pode interagir realizando ações como caçar, comer e dormir. O objetivo é gerenciar os atributos do personagem e alcançar 10 pontos de experiência antes que sua energia se esgote ou seus níveis de fome e sono atinjam o limite.  
+O jogo simula um personagem com atributos básicos, onde o jogador pode interagir realizando ações como caçar, comer e dormir. O objetivo é gerenciar os atributos do personagem e alcançar 10 pontos de experiência antes que sua energia se esgote ou seus níveis de fome e sono atinjam o limite.
+
+## Interface Gráfica
+
+Além das mensagens de texto, o jogo possui uma interface gráfica construída com **Swing**. Os botões permitem realizar as ações e barras de progresso mostram os níveis de energia, fome, sono e experiência em tempo real.
 
 ## Regras do Jogo  
 
